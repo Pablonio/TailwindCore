@@ -1,0 +1,64 @@
+﻿
+<body class="bg-black text-white">
+
+    <div class="container mx-auto py-16 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-8">¡Explorando el Universo!</h1>
+        <p class="text-lg md:text-xl mb-12">Embárcate en un viaje virtual a través de las maravillas del espacio exterior.</p>
+
+        <div class="relative inline-block">
+            <img src="https://www.pixazsexy.com/img/aHR0cDovL9NkbjEzMC5waWNzYXJ0LmNvbS8yNjQwMjE0NTYwMjgyMTIucG5n.jpg" alt="Estrella" class="w-32 h-32 animate-float">
+        </div>
+
+        <div class="mt-12">
+            <p class="text-md md:text-lg mb-6">Descubre los misterios de las galaxias, los agujeros negros y los fenómenos cósmicos más asombrosos.</p>
+            <a href="#explorar" class="inline-block px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Explorar Ahora</a>
+        </div>
+    </div>
+
+    <div class="container mx-auto py-16 text-center bg-blue-900" id="explorar">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">Atrévete a Explorar</h2>
+        <p class="text-md md:text-lg mb-12">Sumérgete en el vasto cosmos y descubre los secretos del universo.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="p-6 bg-blue-800 rounded-lg">
+                <h3 class="text-xl md:text-2xl font-semibold mb-4">Galaxias Asombrosas</h3>
+                <p class="text-md md:text-lg mb-3">Explora las galaxias más hermosas y lejanas del universo conocido.</p>
+                <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Descubrir</button>
+            </div>
+            <div class="p-6 bg-blue-800 rounded-lg">
+                <h3 class="text-xl md:text-2xl font-semibold mb-4">Agujeros Negros Misteriosos</h3>
+                <p class="text-md md:text-lg mb-3">Sumérgete en la intensa gravedad de los agujeros negros y desentraña sus enigmas.</p>
+                <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Investigar</button>
+            </div>
+            <div class="p-6 bg-blue-800 rounded-lg">
+                <h3 class="text-xl md:text-2xl font-semibold mb-4">Viajes Interestelares</h3>
+                <p class="text-md md:text-lg mb-3">Viaja a través de las vastas distancias del espacio y explora planetas desconocidos.</p>
+                <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Viajar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Animación de flotación para la estrella
+            $('.animate-float').mouseover(function () {
+                $(this).addClass('animate-bounce');
+            });
+
+            $('.animate-float').mouseout(function () {
+                $(this).removeClass('animate-bounce');
+            });
+
+            // Scroll suave al hacer clic en los botones
+            $('a[href^="#"]').on('click', function (event) {
+                event.preventDefault();
+
+                $('html, body').animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+
+</body>

@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TailwindProff</title>
+    <link rel="stylesheet" href="~/TailwindProff.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+    <style>
+        /* Estilos para las partículas */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div id="particles-js"></div>
+        <div class="min-h-screen flex flex-col justify-between">
+            <header class="text-center py-4">
+                <nav class="relative flex items-center justify-center bg-primary text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 lg:flex-wrap lg:justify-start lg:py-4"
+                     data-te-navbar-ref>
+                    <div class="w-full max-w-screen-xl flex items-center justify-between mx-auto px-4 lg:px-8">
+                        <div class="mx-2">
+                            <a class="text-xl text-neutral-100" href="#">Navbar</a>
+                        </div>
+                        <button class="lg:hidden block border-0 bg-transparent p-2 text-neutral-300 hover:text-neutral-700 focus:text-neutral-700 focus:outline-none dark:text-neutral-200"
+                                type="button"
+                                data-te-collapse-init
+                                data-te-target="#navbarSupportedContent9"
+                                aria-controls="navbarSupportedContent9"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="w-6 h-6">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24"
+                                     fill="currentColor"
+                                     class="h-6 w-6">
+                                    <path fill-rule="evenodd"
+                                          d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                                          clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="hidden lg:flex lg:items-center" id="navbarSupportedContent9" data-te-collapse-item>
+                            <ul class="list-none ml-auto flex flex-col lg:flex-row" data-te-navbar-nav-ref>
+                                <li class="my-2 lg:my-0 lg:mx-2 lg:first:ml-0" data-te-nav-item-ref>
+                                    <a class="text-neutral-300 hover:text-neutral-700 focus:text-neutral-700 lg:px-2" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main class="container mx-auto px-4 lg:px-8 py-8">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Configuración de las partículas
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 50, // Cantidad de partículas
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#888888'
+                },
+                shape: {
+                    type: 'circle', // Forma de las partículas
+                    stroke: {
+                        width: 0,
+                        color: '#000000'
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#888888',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 100,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+
+
+
+
